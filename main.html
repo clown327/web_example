@@ -68,7 +68,7 @@
             </div>
         </div>
 
-    <!-- 메인 배너
+    <!-- 메인 배너-->
     <section class="banner">
         <div class="banner-contents">
             <h1 class="banner-title">오징어 게임</h1>
@@ -86,58 +86,113 @@
         </div>
         <div class="banner-fadeBottom"></div>
     </section>
-        -->
+        
 
 
-    <!-- 영화 목록 섹션 
-    <section class="row-container">
-        <h2 class="row-title">인기 콘텐츠</h2>
-        <div class="row-posters">
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
+<!-- 영화 목록 섹션 (수정) -->
+<section class="row-container">
+    <h2 class="row-title">인기 콘텐츠</h2>
+    <div class="row-posters">
+        <div class="poster-item" data-movie-id="1">
+            <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg" alt="아바타: 물의 길">
+            <div class="poster-title">아바타: 물의 길</div>
+        </div>
+        <div class="poster-item" data-movie-id="2">
+            <img src="https://image.tmdb.org/t/p/w500/cvsXj3I9Q2yyC4YGEotpkkAcMIO.jpg" alt="존 윅 4">
+            <div class="poster-title">존 윅 4</div>
+        </div>
+        <div class="poster-item" data-movie-id="3">
+            <img src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg" alt="스파이더맨: 어크로스 더 유니버스">
+            <div class="poster-title">스파이더맨: 어크로스 더 유니버스</div>
+        </div>
+        <div class="poster-item" data-movie-id="4">
+            <img src="https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" alt="오펜하이머">
+            <div class="poster-title">오펜하이머</div>
+        </div>
+        <div class="poster-item" data-movie-id="5">
+            <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="가디언즈 오브 갤럭시 3">
+            <div class="poster-title">가디언즈 오브 갤럭시 3</div>
+        </div>
+        <div class="poster-item" data-movie-id="6">
+            <img src="https://image.tmdb.org/t/p/w500/odBUpjZGxY3ecPwEpvVm1UEHEgJ.jpg" alt="더 마블스">
+            <div class="poster-title">더 마블스</div>
+        </div>
+    </div>
+</section>
+
+<section class="row-container">
+    <h2 class="row-title">지금 뜨는 콘텐츠</h2>
+    <div class="row-posters">
+        <div class="poster-item" data-movie-id="7">
+            <img src="https://image.tmdb.org/t/p/w500/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg" alt="미션 임파서블: 데드 레코닝">
+            <div class="poster-title">미션 임파서블: 데드 레코닝</div>
+        </div>
+        <div class="poster-item" data-movie-id="8">
+            <img src="https://image.tmdb.org/t/p/w500/zN41DPmPhwmgJjHwezALdrdvD0h.jpg" alt="인디아나 존스: 운명의 다이얼">
+            <div class="poster-title">인디아나 존스: 운명의 다이얼</div>
+        </div>
+        <div class="poster-item" data-movie-id="9">
+            <img src="https://image.tmdb.org/t/p/w500/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg" alt="엘리멘탈">
+            <div class="poster-title">엘리멘탈</div>
+        </div>
+        <div class="poster-item" data-movie-id="10">
+            <img src="https://image.tmdb.org/t/p/w500/gPbM0MK8CP8A174rmUwGsADNYKD.jpg" alt="분노의 질주: 라이드 오어 다이">
+            <div class="poster-title">분노의 질주: 라이드 오어 다이</div>
+        </div>
+        <div class="poster-item" data-movie-id="11">
+            <img src="https://image.tmdb.org/t/p/w500/sWoYDNPNZs5MtzPbirXV73tIHrA.jpg" alt="슈퍼 마리오 브라더스">
+            <div class="poster-title">슈퍼 마리오 브라더스</div>
+        </div>
+        <div class="poster-item" data-movie-id="12">
+            <img src="https://image.tmdb.org/t/p/w500/d07xtqwq1uriQ1hda6qeu8Skt5m.jpg" alt="바비">
+            <div class="poster-title">바비</div>
+        </div>
+    </div>
+</section>
+
+<!-- 영화 상세 정보 모달 -->
+<div id="movie-detail-modal" class="movie-modal">
+    <div class="movie-modal-content">
+        <span class="movie-modal-close">&times;</span>
+        <div class="movie-detail-container">
+            <div class="movie-detail-header">
+                <img id="modal-movie-poster" src="" alt="영화 포스터">
+                <div class="movie-detail-info">
+                    <h2 id="modal-movie-title">영화 제목</h2>
+                    <div class="movie-meta">
+                        <span id="modal-movie-year">2023</span>
+                        <span class="divider">•</span>
+                        <span id="modal-movie-rating">15세 이상</span>
+                        <span class="divider">•</span>
+                        <span id="modal-movie-runtime">2시간 15분</span>
+                    </div>
+                    <div class="movie-rating">
+                        <i class="fas fa-star"></i>
+                        <span id="modal-movie-score">8.5</span>/10
+                    </div>
+                </div>
             </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
+            <div class="movie-detail-body">
+                <p id="modal-movie-description">영화 설명이 여기에 표시됩니다.</p>
+                <div class="movie-detail-cast">
+                    <h3>출연진</h3>
+                    <div id="modal-movie-cast" class="cast-list">
+                        <!-- 출연진 정보가 여기에 동적으로 추가됩니다 -->
+                    </div>
+                </div>
+                <div class="movie-actions">
+                    <button class="btn play-btn movie-action-btn">
+                        <i class="fas fa-play"></i> 재생
+                    </button>
+                    <button class="btn add-list-btn movie-action-btn">
+                        <i class="fas fa-plus"></i> 내가 찜한 콘텐츠
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section class="row-container">
-        <h2 class="row-title">지금 뜨는 콘텐츠</h2>
-        <div class="row-posters">
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-            <div class="poster-item">
-                <img src="https://via.placeholder.com/180x250" alt="영화 포스터">
-            </div>
-        </div>
-    </section>
-    -->
     <!-- 푸터 -->
     <footer class="footer">
         <div class="footer-content">

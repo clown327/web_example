@@ -39,11 +39,12 @@ window.addEventListener('scroll', function() {
 });
 
 // 포스터 아이템 클릭 이벤트 (예시)
-document.querySelectorAll('.poster-item').forEach(item => {
-    item.addEventListener('click', () => {
-        alert('영화 상세 페이지로 이동할 예정입니다.');
-    });
-});
+
+//document.querySelectorAll('.poster-item').forEach(item => {
+//    item.addEventListener('click', () => {
+//        alert('영화 상세 페이지로 이동할 예정입니다.');
+//    });
+//});
 
 // 스크롤 시 콘텐츠 행이 뷰포트에 들어오면 효과 적용
 const observeRows = () => {
@@ -192,3 +193,143 @@ document.addEventListener('DOMContentLoaded', () => {
     // 콘텐츠 행 관찰자 초기화
     observeRows();
 });
+// 영화 데이터 (실제 서비스에서는 API에서 가져올 정보)
+const movieData = {
+    1: {
+        title: '아바타: 물의 길',
+        year: '2022',
+        rating: '12세 이상',
+        runtime: '3시간 12분',
+        score: 7.6,
+        description: '판도라 행성에서 제이크 설리와 네이티리가 이룬 가족이 겪게 되는 위기와 살아남기 위해 싸워야 하는 이야기를 그린 작품으로, 전편인 아바타에 이어지는 이야기를 담고 있다.',
+        backdrop: 'https://image.tmdb.org/t/p/original/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg',
+        poster: 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/u2aVXft5GLBQnjzWVNda7sdDpdu.jpg',
+        cast: [
+            { name: '샘 워싱턴', character: '제이크 설리', photo: 'https://image.tmdb.org/t/p/w200/qB2vwKGZy8T9gWbdCsAL8uPjE4Z.jpg' },
+            { name: '조 샐다나', character: '네이티리', photo: 'https://image.tmdb.org/t/p/w200/iOVbUH20il632nj2v01NCtYYOZ4.jpg' },
+            { name: '시고니 위버', character: '크레이스 박사', photo: 'https://image.tmdb.org/t/p/w200/fB35yR7B0nBMih8jv9vRIPzV8ob.jpg' }
+        ]
+    },
+    2: {
+        title: '존 윅 4',
+        year: '2023',
+        rating: '18세 이상',
+        runtime: '2시간 49분',
+        score: 7.8,
+        description: '죽을 위기에서 살아난 존 윅은 하이 테이블을 향해 복수의 칼날을 휘두르기 시작하는데, 뉴욕, 파리, 오사카, 베를린을 배경으로 펼쳐지는 처절한 암살자들의 혈투를 그려냈다.',
+        backdrop: 'https://image.tmdb.org/t/p/original/h8gHn0OzBoaefsYseUByqsmEDMY.jpg',
+        poster: 'https://image.tmdb.org/t/p/w500/cvsXj3I9Q2yyC4YGEotpkkAcMIO.jpg',
+        cast: [
+            { name: '키아누 리브스', character: '존 윅', photo: 'https://image.tmdb.org/t/p/w200/4D0PpNI0kmP58hgrwGC3wCjxhnm.jpg' },
+            { name: '로렌스 피시번', character: '바우어리 킹', photo: 'https://image.tmdb.org/t/p/w200/8suOhUmPbfKqDQ17jQ1Gy0mI3P4.jpg' },
+            { name: '이안 맥쉐인', character: '윈스턴', photo: 'https://image.tmdb.org/t/p/w200/bFY0uVRTrk3ho3PvwvZh1ksUoEU.jpg' }
+        ]
+    },
+    // 나머지 영화 데이터도 비슷한 형식으로 추가...
+    3: {
+        title: '스파이더맨: 어크로스 더 유니버스',
+        year: '2023',
+        rating: '12세 이상',
+        runtime: '2시간 20분',
+        score: 8.4,
+        description: '여러 평행세계의 스파이더맨들이 모여 새로운 빌런에 맞서는 이야기. 마일스 모랄레스가 다양한 차원의 스파이더 히어로들과 함께 더 큰 위협에 맞서게 된다.',
+        backdrop: 'https://image.tmdb.org/t/p/original/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg',
+        poster: 'https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg',
+        cast: [
+            { name: '샤메익 무어', character: '마일스 모랄레스(목소리)', photo: 'https://image.tmdb.org/t/p/w200/uJNaSTfWXuKf3XXtT8RXCOpYPqj.jpg' },
+            { name: '헤일리 스타인펠드', character: '그웬 스테이시(목소리)', photo: 'https://image.tmdb.org/t/p/w200/q4UpZBi6QE6GrA44YvLxv7kUSrt.jpg' },
+            { name: '오스카 아이작', character: '미구엘 오하라(목소리)', photo: 'https://image.tmdb.org/t/p/w200/dW5U5yrIIPmMjRThR9KT2xH6nTz.jpg' }
+        ]
+    }
+};
+
+// 영화 포스터 클릭 이벤트
+document.addEventListener('DOMContentLoaded', function() {
+    // 모달 요소 가져오기
+    const movieModal = document.getElementById('movie-detail-modal');
+    const modalClose = document.querySelector('.movie-modal-close');
+    
+    // 포스터 아이템 클릭 이벤트 등록
+    document.querySelectorAll('.poster-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const movieId = item.getAttribute('data-movie-id');
+            openMovieDetail(movieId);
+        });
+    });
+    
+    // 모달 닫기 버튼 이벤트
+    modalClose.addEventListener('click', () => {
+        movieModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // 모달 외부 클릭 시 닫기
+    window.addEventListener('click', (event) => {
+        if (event.target === movieModal) {
+            movieModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // 기존 관찰자 함수 호출 (이전에 작성한 코드가 있다면)
+    if (typeof observeRows === 'function') {
+        observeRows();
+    }
+});
+
+// 영화 상세정보 표시 함수
+function openMovieDetail(movieId) {
+    const movie = movieData[movieId];
+    
+    // 영화 정보가 없는 경우 기본 알림 표시
+    if (!movie) {
+        alert('영화 정보를 불러올 수 없습니다.');
+        return;
+    }
+    
+    // 모달 요소 가져오기
+    const movieModal = document.getElementById('movie-detail-modal');
+    const modalHeader = document.querySelector('.movie-detail-header');
+    const modalTitle = document.getElementById('modal-movie-title');
+    const modalYear = document.getElementById('modal-movie-year');
+    const modalRating = document.getElementById('modal-movie-rating');
+    const modalRuntime = document.getElementById('modal-movie-runtime');
+    const modalScore = document.getElementById('modal-movie-score');
+    const modalDescription = document.getElementById('modal-movie-description');
+    const modalPoster = document.getElementById('modal-movie-poster');
+    const modalCast = document.getElementById('modal-movie-cast');
+    
+    // 영화 정보 설정
+    modalTitle.textContent = movie.title;
+    modalYear.textContent = movie.year;
+    modalRating.textContent = movie.rating;
+    modalRuntime.textContent = movie.runtime;
+    modalScore.textContent = movie.score;
+    modalDescription.textContent = movie.description;
+    modalPoster.src = movie.poster;
+    modalHeader.style.backgroundImage = `url('${movie.backdrop}')`;
+    
+    // 출연진 정보 설정
+    modalCast.innerHTML = '';
+    if (movie.cast && movie.cast.length > 0) {
+        movie.cast.forEach(actor => {
+            const castItem = document.createElement('div');
+            castItem.className = 'cast-item';
+            castItem.innerHTML = `
+                <img class="cast-photo" src="${actor.photo}" alt="${actor.name}">
+                <div class="cast-name">${actor.name}</div>
+                <div class="cast-character">${actor.character}</div>
+            `;
+            modalCast.appendChild(castItem);
+        });
+    } else {
+        modalCast.innerHTML = '<p>출연진 정보가 없습니다.</p>';
+    }
+    
+    // 모달 표시
+    movieModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+}
+
+// 기존 코드 유지 (스크롤 이벤트 등)
+// ...
