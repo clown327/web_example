@@ -35,7 +35,7 @@ ul {
 }
 
 .navbar.scrolled {
-    background: linear-gradient(to right, #e50914, #8B0000);
+    background: linear-gradient(to right, #8B0000);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -796,4 +796,158 @@ ul {
     .movie-actions {
         flex-direction: column;
     }
+}
+/* 배너 스와이퍼 스타일 */
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  color: white;
+}
+
+.banner-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner, .banner-1, .banner-2, .banner-3 {
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.banner-1 {
+  background-image: url('https://image.tmdb.org/t/p/original/rQTW9oQZFsujMlvyYBjbwa8LYkD.jpg');
+}
+
+.banner-2 {
+  background-image: url('https://image.tmdb.org/t/p/original/yfqObflcOrCFOdhFKTzUiGflLbQ.jpg');
+}
+
+.banner-3 {
+  background-image: url('https://image.tmdb.org/t/p/original/7I6VUdPj6tQECNHdviJkUHD2u89.jpg');
+}
+
+.banner-contents {
+  padding: 0 20px 0 50px;
+  grid-column: 1;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 140%;
+  max-width: 550px;
+}
+
+
+.banner-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.banner-fadeBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background-image: linear-gradient(180deg, transparent, rgba(20, 20, 20, 0.6), #141414);
+}
+
+/* 선택 탭 스타일 */
+.tab-buttons {
+  display: flex;
+  margin: 20px 0;
+  padding-left: 50px;
+}
+
+.tab-button {
+  padding: 8px 20px;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  font-weight: bold;
+}
+
+/* 스와이퍼 네비게이션 버튼 (좌우 화살표) */
+.swiper-button-next, .swiper-button-prev {
+  color: #0078ff; /* 이미지의 파란색 */
+  width: 50px; /* 크기 변경 */
+  height: 50px; /* 크기 변경 */
+  background: rgba(0, 0, 0, 0.5); /* 배경색 추가 */
+  border-radius: 50%; /* 원형 모양 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 화살표 아이콘 크기 */
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 20px; /* 아이콘 크기 */
+}
+
+/* 페이지네이션 점 버튼 */
+.swiper-pagination-bullet {
+  background: white; /* 기본 색상 */
+  width: 10px; /* 크기 변경 */
+  height: 10px; /* 크기 변경 */
+}
+
+.swiper-pagination-bullet-active {
+  background: #0078ff; /* 활성화된 점 색상 - 이미지의 파란색 */
+}
+
+/* 리뷰 섹션 스타일 */
+.movie-detail-reviews {
+    margin: 30px 0;
+}
+
+.reviews-list {
+    margin-top: 15px;
+}
+
+.review-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    color: #e5e5e5;
+}
+
+.review-date {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.review-rating {
+    color: #ffca28;
+    margin-bottom: 8px;
+}
+
+.review-text {
+    line-height: 1.5;
+    color: #e5e5e5;
 }

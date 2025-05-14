@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>넷플릭스 클론</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 <!--<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
 </head>
 <body>
@@ -68,24 +71,81 @@
             </div>
         </div>
 
-    <!-- 메인 배너-->
-    <section class="banner">
-        <div class="banner-contents">
-            <h1 class="banner-title">오징어 게임</h1>
+<!-- 메인 배너 스와이퍼 -->
+<section class="banner-container">
+  <div class="swiper banner-swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        <div class="banner-1">
+            <div class="banner-contents">
+            <h1 class="banner-title">미션 임파서블</h1>
             <div class="banner-buttons">
                 <button class="btn play-btn">
-                    <i class="fas fa-play"></i> 재생
+                <i class="fas fa-play"></i> 재생
                 </button>
                 <button class="btn more-info-btn">
-                    <i class="fas fa-info-circle"></i> 상세 정보
+                <i class="fas fa-info-circle"></i> 상세 정보
                 </button>
             </div>
             <p class="banner-desc">
-                빚에 쫓기는 사람들이 의문의 서바이벌 게임에 참가한다. 456억 원의 상금이 걸려 있지만 탈락의 대가는 죽음이다.
+                이단 헌트와 IMF팀은 인류의 미래를 위협하는 새로운 무기를 추적하는 임무에 착수한다. 세계의 운명이 위태로운 상황에서, 과거의 적과 동맹을 이루고 개인적인 대가를 치러야 하는 위험한 게임이 시작된다.
             </p>
+            </div>
+            <div class="banner-fadeBottom"></div>
         </div>
-        <div class="banner-fadeBottom"></div>
-    </section>
+        </div>
+
+      
+      <!-- 두 번째 슬라이드 -->
+      <div class="swiper-slide">
+        <div class="banner banner-2">
+          <div class="banner-contents">
+            <h1 class="banner-title">아바타 물의 길</h1>
+            <div class="banner-buttons">
+              <button class="btn play-btn">
+                <i class="fas fa-play"></i> 재생
+              </button>
+              <button class="btn more-info-btn">
+                <i class="fas fa-info-circle"></i> 상세 정보
+              </button>
+            </div>
+            <p class="banner-desc">
+              판도라 행성에서 제이크 설리와 네이티리가 이룬 가족이 직면한 위기와 살아남기 위해 떠나야 하는 여정을 그린 이야기
+            </p>
+          </div>
+          <div class="banner-fadeBottom"></div>
+        </div>
+      </div>
+      
+      <!-- 세 번째 슬라이드 -->
+      <div class="swiper-slide">
+        <div class="banner banner-3">
+          <div class="banner-contents">
+            <h1 class="banner-title">존 윅 4</h1>
+            <div class="banner-buttons">
+              <button class="btn play-btn">
+                <i class="fas fa-play"></i> 재생
+              </button>
+              <button class="btn more-info-btn">
+                <i class="fas fa-info-circle"></i> 상세 정보
+              </button>
+            </div>
+            <p class="banner-desc">
+              죽음에서 벗어나기 위해 최강의 적과 맞서야 하는 존 윅의 마지막 여정
+            </p>
+          </div>
+          <div class="banner-fadeBottom"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 네비게이션 버튼 -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- 페이지네이션 -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
         
 
 
@@ -98,23 +158,23 @@
             <div class="poster-title">아바타: 물의 길</div>
         </div>
         <div class="poster-item" data-movie-id="2">
-            <img src="https://image.tmdb.org/t/p/w500/cvsXj3I9Q2yyC4YGEotpkkAcMIO.jpg" alt="존 윅 4">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/h3LsdSBzhRnBebz4BTpAhh63PD3.jpg" alt="존 윅 4">
             <div class="poster-title">존 윅 4</div>
         </div>
         <div class="poster-item" data-movie-id="3">
-            <img src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg" alt="스파이더맨: 어크로스 더 유니버스">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/lMWTlGr9jVUC18T515hPRKym5QQ.jpg" alt="스파이더맨: 어크로스 더 유니버스">
             <div class="poster-title">스파이더맨: 어크로스 더 유니버스</div>
         </div>
         <div class="poster-item" data-movie-id="4">
-            <img src="https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" alt="오펜하이머">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/jpD6z9fgNe7OqsHoDeAWQWoULde.jpg" alt="오펜하이머">
             <div class="poster-title">오펜하이머</div>
         </div>
         <div class="poster-item" data-movie-id="5">
-            <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="가디언즈 오브 갤럭시 3">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/zK0FTsXvkWVS3yubZkbenbAFcnY.jpg" alt="가디언즈 오브 갤럭시 3">
             <div class="poster-title">가디언즈 오브 갤럭시 3</div>
         </div>
         <div class="poster-item" data-movie-id="6">
-            <img src="https://image.tmdb.org/t/p/w500/odBUpjZGxY3ecPwEpvVm1UEHEgJ.jpg" alt="더 마블스">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/qApkjVJzZ2nkFUcFhcYkTBaRnNj.jpg" alt="더 마블스">
             <div class="poster-title">더 마블스</div>
         </div>
     </div>
@@ -124,27 +184,27 @@
     <h2 class="row-title">지금 뜨는 콘텐츠</h2>
     <div class="row-posters">
         <div class="poster-item" data-movie-id="7">
-            <img src="https://image.tmdb.org/t/p/w500/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg" alt="미션 임파서블: 데드 레코닝">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/qUeYzJLGVIiuBv3O6vTIxQje7P9.jpg" alt="미션 임파서블: 데드 레코닝">
             <div class="poster-title">미션 임파서블: 데드 레코닝</div>
         </div>
         <div class="poster-item" data-movie-id="8">
-            <img src="https://image.tmdb.org/t/p/w500/zN41DPmPhwmgJjHwezALdrdvD0h.jpg" alt="인디아나 존스: 운명의 다이얼">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/8DzQfAOf0DHXdXHFUNofEqZGRwp.jpg" alt="인디아나 존스: 운명의 다이얼">
             <div class="poster-title">인디아나 존스: 운명의 다이얼</div>
         </div>
         <div class="poster-item" data-movie-id="9">
-            <img src="https://image.tmdb.org/t/p/w500/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg" alt="엘리멘탈">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/w7eApyAshbepBnDyYRjSeGyRHi2.jpg" alt="엘리멘탈">
             <div class="poster-title">엘리멘탈</div>
         </div>
         <div class="poster-item" data-movie-id="10">
-            <img src="https://image.tmdb.org/t/p/w500/gPbM0MK8CP8A174rmUwGsADNYKD.jpg" alt="분노의 질주: 라이드 오어 다이">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/wXNihLltMCGR7XepN39syIlCt5X.jpg" alt="분노의 질주: 라이드 오어 다이">
             <div class="poster-title">분노의 질주: 라이드 오어 다이</div>
         </div>
         <div class="poster-item" data-movie-id="11">
-            <img src="https://image.tmdb.org/t/p/w500/sWoYDNPNZs5MtzPbirXV73tIHrA.jpg" alt="슈퍼 마리오 브라더스">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/jt1GlLLvkWL2m83VX8I1qsDR187.jpg" alt="슈퍼 마리오 브라더스">
             <div class="poster-title">슈퍼 마리오 브라더스</div>
         </div>
         <div class="poster-item" data-movie-id="12">
-            <img src="https://image.tmdb.org/t/p/w500/d07xtqwq1uriQ1hda6qeu8Skt5m.jpg" alt="바비">
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/h3mUJ9WEJ8PzA450ad4hrjsaiqG.jpg" alt="바비">
             <div class="poster-title">바비</div>
         </div>
     </div>

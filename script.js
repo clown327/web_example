@@ -331,5 +331,4 @@ function openMovieDetail(movieId) {
     document.body.style.overflow = 'hidden'; // 스크롤 방지
 }
 
-// 기존 코드 유지 (스크롤 이벤트 등)
-// ...
+
