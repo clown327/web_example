@@ -12,7 +12,7 @@ window.addEventListener('scroll', function() {
         
         // 스크롤 위치에 따라 그라데이션 색상 강도 변경
         if (scrollPosition > 300) {
-            navbar.style.background = `linear-gradient(to right, #e50914, #8B0000)`;
+            navbar.style.background = `linear-gradient(to right,rgb(239, 23, 34),rgb(110, 0, 0))`;
         } else {
             // 중간 지점에서는 부드러운 그라데이션 전환
             const midPoint = scrollPosition / 300;
@@ -39,7 +39,6 @@ window.addEventListener('scroll', function() {
 });
 
 // 포스터 아이템 클릭 이벤트 (예시)
-
 //document.querySelectorAll('.poster-item').forEach(item => {
 //    item.addEventListener('click', () => {
 //        alert('영화 상세 페이지로 이동할 예정입니다.');
@@ -193,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 콘텐츠 행 관찰자 초기화
     observeRows();
 });
+
 // 영화 데이터 (실제 서비스에서는 API에서 가져올 정보)
 const movieData = {
     1: {
@@ -225,7 +225,6 @@ const movieData = {
             { name: '이안 맥쉐인', character: '윈스턴', photo: 'https://image.tmdb.org/t/p/w200/bFY0uVRTrk3ho3PvwvZh1ksUoEU.jpg' }
         ]
     },
-    // 나머지 영화 데이터도 비슷한 형식으로 추가...
     3: {
         title: '스파이더맨: 어크로스 더 유니버스',
         year: '2023',
@@ -330,5 +329,27 @@ function openMovieDetail(movieId) {
     movieModal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // 스크롤 방지
 }
-
-
+document.addEventListener('DOMContentLoaded', function() {
+  // 배너 스와이퍼 초기화
+  const bannerSwiper = new Swiper('.banner-swiper', {
+    // 기본 설정
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    
+    // 네비게이션 화살표
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // 페이지네이션 (하단 점)
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    }
+  });
+});
